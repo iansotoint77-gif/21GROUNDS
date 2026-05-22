@@ -1,0 +1,7 @@
+/app/src/main/java/com/ejemplo/filter/AuthFilter.java
+/app/src/main/java/com/ejemplo/model/UsuarioDAO.java
+/app/src/main/java/com/ejemplo/util/DBConnection.java
+/app/src/main/java/com/ejemplo/controller/LoginServlet.java
+/app/src/main/java/com/ejemplo/controller/RegistroServlet.java
+/app/src/main/java/com/ejemplo/model/Usuario.java
+/app/src/main/java/com/ejemplo/controller/LogoutServlet.java
