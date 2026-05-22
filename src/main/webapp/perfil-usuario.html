@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>21GROUNDS - Mi Perfil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header class="app-header"><h1>21GROUNDS</h1></header>
+
+    <main class="app-main" id="main-content">
+        <section class="view-section active">
+            <div style="padding-top: 1.5rem; max-width: 900px; margin: 0 auto; width: 100%;">
+                
+                <div id="success-message" style="display: none; background-color: #dcfce7; color: #16a34a; padding: 0.8rem; border-radius: 8px; font-size: 0.85rem; margin-bottom: 1.5rem; text-align: center; font-weight: 600;"></div>
+
+                <h2 style="font-size: 1.2rem; color: #0f172a; font-weight: 800; margin-bottom: 1rem;">Mi perfil</h2>
+
+                <!-- Main Profile Card -->
+                <div class="card" style="background-color: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); margin-bottom: 1.5rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <!-- Avatar con la inicial del nombre -->
+                        <div id="user-avatar" style="width: 60px; height: 60px; border-radius: 50%; background-color: #3b82f6; color: white; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold;">?</div>
+                        <div style="display: flex; flex-direction: column;">
+                            <span id="user-username" style="font-weight: 800; color: #111; font-size: 1.1rem;">Cargando...</span>
+                            <span id="user-nombre" style="color: #64748b; font-size: 0.9rem;"></span>
+                            <div style="display: flex; align-items: center; gap: 0.2rem; margin-top: 0.2rem;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span style="color: #3b82f6; font-size: 0.75rem; font-weight: bold;">Cuenta activa en 21Grounds</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Estadísticas -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; text-align: center; margin-bottom: 2rem;">
+                        <div style="border-right: 1px solid #f1f5f9;">
+                            <div id="user-puntos" style="font-size: 1.4rem; font-weight: 900; color: #0f172a;">0.0</div>
+                            <div style="font-size: 0.65rem; font-weight: 800; color: #94a3b8; text-transform: uppercase; margin-top: 0.2rem;">Puntos</div>
+                        </div>
+                        <div style="border-right: 1px solid #f1f5f9;">
+                            <div style="font-size: 1.4rem; font-weight: 900; color: #FF6B00;">0</div>
+                            <div style="font-size: 0.65rem; font-weight: 800; color: #94a3b8; text-transform: uppercase; margin-top: 0.2rem;">Victorias</div>
+                        </div>
+                        <div>
+                            <div id="user-partidos" style="font-size: 1.4rem; font-weight: 900; color: #0f172a;">0</div>
+                            <div style="font-size: 0.65rem; font-weight: 800; color: #94a3b8; text-transform: uppercase; margin-top: 0.2rem;">Partidos</div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!-- Últimos Partidos -->
+                <div class="card" style="background-color: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); text-align: center; margin-bottom: 1.5rem;">
+                    <h3 style="font-size: 1.1rem; color: #0f172a; font-weight: 800; margin-bottom: 1rem;">Últimos partidos</h3>
+                    <div style="margin: 0 auto 1rem auto; width: 40px; height: 40px; color: #cbd5e1;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 100%; height: 100%;"><circle cx="12" cy="12" r="10"/><path d="M5.4 5.4c2.5 4.5 7.4 5 13.2 2.6"/><path d="M18.6 18.6c-2.5-4.5-7.4-5-13.2-2.6"/><path d="M12 2v20"/><path d="M2 12h20"/></svg>
+                    </div>
+                    <p style="color: #94a3b8; font-size: 0.8rem; margin-bottom: 1.5rem;">Aún no has jugado ningún partido. Cuando juegues uno, aparecerá aquí.</p>
+                    <a href="partidos.html" class="btn" style="background-color: #0f172a; color: white; padding: 0.6rem 1.2rem; border-radius: 20px; font-weight: 700; font-size: 0.8rem; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                        Buscar partido
+                    </a>
+                </div>
+
+                <!-- Ajustes y Cerrar sesión -->
+                <a href="ajustes.html" style="text-decoration: none; background-color: white; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.5rem; cursor: pointer;">
+                    <div style="display: flex; align-items: center; gap: 0.8rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg>
+                        <span style="font-weight: 800; color: #0f172a; font-size: 0.9rem;">Ajustes</span>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                </a>
+
+                <a href="LogoutServlet" style="text-decoration: none; background-color: white; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); display: flex; align-items: center; padding: 1rem 1.5rem; cursor: pointer; margin-bottom: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 0.8rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                        <span style="font-weight: 800; color: #ef4444; font-size: 0.9rem;">Cerrar sesión</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <nav class="app-footer">
+        <a href="index.html" class="nav-item"><svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg><span style="margin-top: 4px;">Inicio</span></a>
+        <a href="partidos.html" class="nav-item"><svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg><span style="margin-top: 4px;">Partidos</span></a>
+        <a href="prestigio.html" class="nav-item"><svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path></svg><span style="margin-top: 4px;">Prestigio</span></a>
+        <a href="noticias.html" class="nav-item"><svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path><path d="M18 14h-8"></path><path d="M15 18h-5"></path><path d="M10 6h8v4h-8V6Z"></path></svg><span style="margin-top: 4px;">Noticias</span></a>
+        <a href="perfil.html" class="nav-item active"><svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span style="margin-top: 4px;">Perfil</span></a>
+    </nav>
+
+    <script src="js/app.js"></script>
+    <script>
+        // Cargar datos reales del usuario desde la sesión del servidor
+        document.addEventListener('DOMContentLoaded', async () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('status') === 'actualizado') {
+                const successMsg = document.getElementById('success-message');
+                successMsg.style.display = 'block';
+                successMsg.textContent = '¡Tu perfil se ha actualizado correctamente!';
+                // Limpiar la URL sin recargar
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+
+            try {
+                const res = await fetch('SessionServlet');
+                const datos = await res.json();
+
+                if (!datos.loggedIn) {
+                    // Si no hay sesión, redirigir a la vista de selección
+                    window.location.href = 'perfil.html';
+                    return;
+                }
+
+                // Rellenar datos del perfil
+                const inicial = datos.nombre ? datos.nombre[0].toUpperCase() : '?';
+                document.getElementById('user-avatar').textContent = inicial;
+                if (datos.colorPerfil) {
+                    document.getElementById('user-avatar').style.backgroundColor = datos.colorPerfil;
+                }
+                document.getElementById('user-username').textContent = datos.username || '';
+                document.getElementById('user-nombre').textContent = (datos.nombre || '') + ' ' + (datos.apellido || '');
+                document.getElementById('user-puntos').textContent = datos.puntosTotales !== undefined ? datos.puntosTotales.toFixed(1) : '0.0';
+                document.getElementById('user-partidos').textContent = datos.partidosJugados !== undefined ? datos.partidosJugados : '0';
+
+            } catch (err) {
+                console.warn('No se pudo obtener la sesión:', err);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>21GROUNDS - Ajustes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header class="app-header"><h1>21GROUNDS</h1></header>
+
+    <main class="app-main" id="main-content">
+        <section class="view-section active">
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: calc(100vh - 180px); padding: 1rem 0 2rem 0;">
+                <div style="background-color: white; padding: 2.5rem 2.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); max-width: 500px; width: 100%; margin: 0 auto;">
+                    <h2 style="font-size: 1.3rem; color: #111; margin-bottom: 1.5rem; font-weight: 700;">Ajustes</h2>
+                    
+                    <div id="error-message" style="display: none; background-color: #fee2e2; color: #ef4444; padding: 0.8rem; border-radius: 8px; font-size: 0.85rem; margin-bottom: 1rem; text-align: center; font-weight: 600;"></div>
+
+                    <form style="text-align: left;" id="settings-form" action="AjustesServlet" method="post">
+
+                        <div style="margin-bottom: 1.2rem;">
+                            <label style="display: block; font-size: 0.75rem; color: #475569; font-weight: 700; margin-bottom: 0.6rem; text-transform: uppercase;">Nombre de Usuario</label>
+                            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.4rem;">
+                                <div style="position: relative; display: flex; align-items: center; flex: 1;">
+                                    <div style="position: absolute; left: 14px; color: #94a3b8;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                    </div>
+                                    <input type="text" id="username-input" name="username" style="width: 100%; padding: 0.8rem 1rem 0.8rem 2.8rem; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.9rem; color: #333; outline: none;" value="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; font-size: 0.75rem; color: #475569; font-weight: 700; margin-bottom: 0.6rem; text-transform: uppercase;">Comunidad</label>
+                            <select id="comunidad-select" name="comunidad" style="width: 100%; padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid #cbd5e1; font-family: inherit; font-size: 0.9rem; color: #333; background-color: #fff;">
+                                <option value="1">Andalucía</option><option value="2">Aragón</option><option value="3">Asturias</option>
+                                <option value="4">Islas Baleares</option><option value="5">Canarias</option><option value="6">Cantabria</option>
+                                <option value="7">Castilla y León</option><option value="8">Castilla-La Mancha</option><option value="9">Cataluña</option>
+                                <option value="10">Extremadura</option><option value="11">Galicia</option><option value="12">La Rioja</option>
+                                <option value="13">Madrid</option><option value="14">Murcia</option><option value="15">Navarra</option>
+                                <option value="16">País Vasco</option><option value="17">Comunidad Valenciana</option>
+                            </select>
+                        </div>
+
+                        <div style="margin-bottom: 2rem;">
+                            <label style="display: block; font-size: 0.75rem; color: #475569; font-weight: 700; margin-bottom: 0.6rem; text-transform: uppercase;">Nueva Contraseña</label>
+                            <div style="position: relative; display: flex; align-items: center;">
+                                <div style="position: absolute; left: 14px; color: #94a3b8;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                                </div>
+                                <input type="password" name="newPassword" style="width: 100%; padding: 0.8rem 2.8rem 0.8rem 2.8rem; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.9rem; color: #333; outline: none;" placeholder="••••••••">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn" style="background-color: #001f3f; color: white; width: 100%; padding: 1rem; border-radius: 8px; border: none; font-weight: 700; font-size: 0.95rem; cursor: pointer; text-transform: uppercase;">GUARDAR CAMBIOS</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <nav class="app-footer">
+        <a href="index.html" class="nav-item"><svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg><span style="margin-top: 4px;">Inicio</span></a>
+        <a href="partidos.html" class="nav-item"><svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg><span style="margin-top: 4px;">Partidos</span></a>
+        <a href="prestigio.html" class="nav-item"><svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path></svg><span style="margin-top: 4px;">Prestigio</span></a>
+        <a href="noticias.html" class="nav-item"><svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path><path d="M18 14h-8"></path><path d="M15 18h-5"></path><path d="M10 6h8v4h-8V6Z"></path></svg><span style="margin-top: 4px;">Noticias</span></a>
+        <a href="perfil-usuario.html" class="nav-item active"><svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span style="margin-top: 4px;">Perfil</span></a>
+    </nav>
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Revisar si hay errores en la URL
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('error')) {
+                const errorDiv = document.getElementById('error-message');
+                errorDiv.style.display = 'block';
+                const errType = urlParams.get('error');
+                if (errType === 'comunidad_invalida') errorDiv.textContent = 'La comunidad seleccionada no es válida.';
+                else if (errType === 'error_db') errorDiv.textContent = 'Hubo un error al actualizar los datos en el servidor.';
+                else if (errType === 'campos_incompletos') errorDiv.textContent = 'El nombre de usuario y la comunidad son obligatorios.';
+                else errorDiv.textContent = 'Ha ocurrido un error inesperado.';
+            }
+
+            try {
+                const res = await fetch('SessionServlet');
+                const datos = await res.json();
+                if (!datos.loggedIn) {
+                    window.location.href = 'login.html';
+                    return;
+                }
+                // Pre-rellenar los campos
+                document.getElementById('username-input').value = datos.username || '';
+                if (datos.comunidadId) {
+                    document.getElementById('comunidad-select').value = datos.comunidadId;
+                }
+            } catch (err) {
+                console.error("Error cargando sesión:", err);
+            }
+        });
+    </script>
+</body>
+</html>
