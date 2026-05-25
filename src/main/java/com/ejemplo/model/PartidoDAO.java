@@ -8,11 +8,7 @@ import java.util.List;
 
 public class PartidoDAO {
 
-    /**
-     * Crea un nuevo partido en la base de datos.
-     * El creador se añade automáticamente al Equipo 1 como primer jugador.
-     */
-    public boolean crearPartido(Partido partido) {
+    public String crearPartido(Partido partido) {
         String sqlPartido = "INSERT INTO partidos (creador_id, tipo_partido, max_jugadores, lugar, comunidad_id, fecha_hora) VALUES (?, ?, ?, ?, ?, ?)";
         String sqlUnirse = "INSERT INTO partido_usuarios (partido_id, usuario_id, equipo) VALUES (?, ?, 1)";
 
@@ -40,16 +36,18 @@ public class PartidoDAO {
                 }
 
                 conn.commit();
-                return true;
+                return "ok";
 
             } catch (SQLException e) {
                 conn.rollback();
                 e.printStackTrace();
-                return false;
+                return "Error SQL al insertar: " + e.getMessage();
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
+            return "Error SQL conexion: " + e.getMessage();
+        } catch (Exception e) {
+            return "Error general: " + e.getMessage();
         }
     }
 

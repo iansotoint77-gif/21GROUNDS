@@ -24,8 +24,14 @@
                         Por favor rellena todos los campos antes de publicar.
                     </div>
                     <script>
-                        if (window.location.search.includes('error=')) {
-                            document.getElementById('error-partido').style.display = 'block';
+                        const urlParams = new URLSearchParams(window.location.search);
+                        if (urlParams.has('error')) {
+                            const errorMsg = urlParams.get('error');
+                            const errorDiv = document.getElementById('error-partido');
+                            if (errorMsg !== 'true' && errorMsg !== 'campos' && errorMsg !== 'comunidad') {
+                                errorDiv.innerText = decodeURIComponent(errorMsg);
+                            }
+                            errorDiv.style.display = 'block';
                         }
                     </script>
 

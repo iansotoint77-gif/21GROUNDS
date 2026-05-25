@@ -73,12 +73,12 @@ public class PartidoServlet extends HttpServlet {
         partido.setFechaHora(fecha + " " + hora + ":00");
         partido.setEstado("abierto");
 
-        boolean creado = partidoDAO.crearPartido(partido);
+        String resultado = partidoDAO.crearPartido(partido);
 
-        if (creado) {
+        if ("ok".equals(resultado)) {
             response.sendRedirect("partidos.html");
         } else {
-            response.sendRedirect("crearPartido.html?error=true");
+            response.sendRedirect("crearPartido.html?error=" + java.net.URLEncoder.encode(resultado, "UTF-8"));
         }
     }
 
@@ -100,6 +100,9 @@ public class PartidoServlet extends HttpServlet {
      * Usamos un mapa sencillo que coincide con el INSERT del SQL.
      */
     private int resolverComunidadId(String nombre) {
+        String n = nombre.trim();
+        if (n.equalsIgnoreCase("Islas Baleares")) n = "Baleares";
+        
         String[] comunidades = {
             "Andalucía", "Aragón", "Asturias", "Baleares", "Canarias",
             "Cantabria", "Castilla y León", "Castilla-La Mancha", "Cataluña",
@@ -107,7 +110,7 @@ public class PartidoServlet extends HttpServlet {
             "Murcia", "Navarra", "País Vasco", "La Rioja", "Ceuta", "Melilla"
         };
         for (int i = 0; i < comunidades.length; i++) {
-            if (comunidades[i].equalsIgnoreCase(nombre.trim())) {
+            if (comunidades[i].equalsIgnoreCase(n)) {
                 return i + 1; // IDs empiezan en 1
             }
         }
